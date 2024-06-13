@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
+
+header.masthead {
+    background-color: #febc2f !important;
+    color: #ffffff !important;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #fea50e !important; /* Cor do cabeçalho */
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page-section {
+    padding: 100px 0;
+    background-color: #ffffff !important; /* cor principal */
+}
+
+.page-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #fea50e !important;
+}
+
+.page-section .lead {
+    color: #000 !important; /* Texto preto */
+}
+
+.divider-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.divider-custom .divider-custom-line {
+    width: 100px;
+    height: 1px;
+    background-color: #ffffff !important;
+}
+
+.divider-custom .divider-custom-icon {
+    margin: 0 10px;
+    color: #ffe4b7;
+    font-size: 1.5rem;
+}
+
+.footer {
+    background-color: #febc2f;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright {
+    background-color: #fea50e;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.portfolio-item {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.portfolio-item img {
+    max-height: 250px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.portfolio-item-caption {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.edit-form {
+    display: none;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.edit-form .form-control {
+    margin-bottom: 10px;
+}
+
+.edit-form .btn {
+    margin-top: 10px;
+}
+
+.list-group-item .btn-primary {
+    background-color: #fea50e !important;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.list-group-item .btn-primary:hover {
+    background-color: #febc2f !important;
+    color: #ffffff;
+}
+
+.list-group-item .btn-danger {
+    background-color: #dc3545;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.list-group-item .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Novas regras para mudar a cor dos botões das outras páginas */
+.btn-primary {
+    background-color: #fea50e !important;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #febc2f !important;
+    color: #ffffff;
+}
