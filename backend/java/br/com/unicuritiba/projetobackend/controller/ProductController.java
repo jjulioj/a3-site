@@ -44,4 +44,6 @@ public class ProductController {
         Optional<ProductEntity> updatedProduct = productService.updateProduct(id, product);
         return updatedProduct.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
 }

@@ -14,6 +14,7 @@ public class ProductEntity {
     private String name;
     private Double price;
     private String description;
+    private String url;
     
 	public Long getId() {
 		return id;
@@ -45,6 +46,14 @@ public class ProductEntity {
 	
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
     
