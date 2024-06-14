@@ -1,4 +1,3 @@
-// Funções para abrir e fechar formulários
 function openForm(formType) {
     document.getElementById('form-popup').style.display = 'block';
     if (formType === 'user') {
@@ -14,7 +13,6 @@ function closeForm() {
     document.getElementById('form-popup').style.display = 'none';
 }
 
-// Funções para adicionar usuários e produtos
 async function submitForm(event) {
     event.preventDefault();
     const form = event.target;
@@ -30,7 +28,8 @@ async function submitForm(event) {
         const product = {
             name: document.getElementById('product-name').value,
             price: document.getElementById('product-price').value,
-            description: document.getElementById('product-description').value
+            description: document.getElementById('product-description').value,
+            url: document.getElementById('product-url').value
         };
         await addProduct(product);
         displayProducts();
@@ -78,7 +77,6 @@ async function addProduct(product) {
     }
 }
 
-// Funções para exibir usuários e produtos
 async function getAllUsers() {
     try {
         const response = await fetch('http://localhost:8080/users', { method: 'GET' });
@@ -94,7 +92,7 @@ async function getAllUsers() {
 
 async function displayUsers() {
     const userList = document.getElementById('user-list');
-    userList.innerHTML = ''; // Limpa a lista antes de adicionar novos usuários
+    userList.innerHTML = '';
     const users = await getAllUsers();
     if (users && users.length > 0) {
         users.forEach(user => {
@@ -163,6 +161,7 @@ async function displayProducts() {
                         <strong>Nome:</strong> <span class="product-name">${product.name}</span>
                         <br><strong>Preço:</strong> <span class="product-price">${product.price}</span>
                         <br><strong>Descrição:</strong> <span class="product-description">${product.description}</span>
+                        <br><strong>URL:</strong> <span class="product-url">${product.url}</span>
                     </div>
                     <div>
                         <button class="btn btn-primary btn-sm" onclick="showEditForm('product', '${product.id}')">Editar</button>
@@ -183,6 +182,10 @@ async function displayProducts() {
                         <label for="edit-product-description" class="form-label">Descrição</label>
                         <textarea class="form-control edit-product-description">${product.description}</textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="edit-product-url" class="form-label">URL</label>
+                        <textarea class="form-control edit-product-url">${product.url}</textarea>
+                    </div>
                     <button class="btn btn-primary btn-sm" onclick="saveProductEdits(event)">Salvar</button>
                 </form>
             `;
@@ -193,7 +196,6 @@ async function displayProducts() {
     }
 }
 
-// Funções para exibir formulário de edição
 function showEditForm(type, id) {
     const forms = document.querySelectorAll('.edit-form');
     forms.forEach(form => form.style.display = 'none');
@@ -203,7 +205,6 @@ function showEditForm(type, id) {
     listItem.querySelector('.edit-form').style.display = 'block';
 }
 
-// Funções para deletar usuários e produtos
 async function deleteUser(userId) {
     if (confirm('Tem certeza que deseja deletar este usuário?')) {
         try {
@@ -236,7 +237,6 @@ async function deleteProduct(productId) {
     }
 }
 
-// Funções para salvar as edições
 async function saveUserEdits(event) {
     event.preventDefault();
     const listItem = event.target.closest('.list-group-item');
@@ -270,7 +270,8 @@ async function saveProductEdits(event) {
     const updatedProduct = {
         name: listItem.querySelector('.edit-product-name').value,
         price: listItem.querySelector('.edit-product-price').value,
-        description: listItem.querySelector('.edit-product-description').value
+        description: listItem.querySelector('.edit-product-description').value,
+        url: listItem.querySelector('.edit-product-url').value
     };
     try {
         const response = await fetch(`http://localhost:8080/products/${productId}`, {
@@ -289,7 +290,6 @@ async function saveProductEdits(event) {
     }
 }
 
-// Inicializar listas ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
     displayUsers();
     displayProducts();

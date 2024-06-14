@@ -66,6 +66,10 @@
                             <input class="form-control" id="product-price" type="number" placeholder="Preço" required />
                             <label for="product-price">Preço</label>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="product-url" type="text" placeholder="URL" required />
+                            <label for="product-url">URL</label>
+                        </div>
                         <button class="btn btn-primary btn-xl" type="submit">Cadastrar</button>
                     </form>
                 </div>
@@ -81,7 +85,8 @@
             const product = {
                 name: document.getElementById('product-name').value,
                 description: document.getElementById('product-description').value,
-                price: document.getElementById('product-price').value
+                price: document.getElementById('product-price').value,
+                url: document.getElementById('product-url').value
             };
             
             try {
